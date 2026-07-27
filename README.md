@@ -3,8 +3,8 @@
 Minecraft Fabric 1.20.1 辅助模组。
 
 > 需要 Fabric 1.21.1？切换到 [1.21.1 分支](https://github.com/led-un/FlightMod-Fabric/tree/1.21.1)
-> 需要 Forge 版本？👉 [FlightMod-Forge](https://github.com/led-un/FlightMod-Forge)  
-> 需要 NeoForge 1.21.1？👉 [FlightMod-NeoForge](https://github.com/led-un/FlightMod-NeoForge)
+
+> 其他加载器版本： [Forge 1.20.1](https://github.com/led-un/FlightMod-Forge) | [NeoForge 1.21.1](https://github.com/led-un/FlightMod-NeoForge)
 
 ## 功能
 
