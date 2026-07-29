@@ -19,14 +19,14 @@ public class KeyHandler {
                 "key.flightmod.flight",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_J,
-                "category.flightmod"
+                KeyMapping.Category.MISC
         ));
 
         noFallKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.flightmod.nofall",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_K,
-                "category.flightmod"
+                KeyMapping.Category.MISC
         ));
     }
 
@@ -35,7 +35,6 @@ public class KeyHandler {
             return;
         }
 
-        // Flight toggle (J key)
         if (flightKey != null && flightKey.isDown()) {
             if (!fPressed) {
                 fPressed = true;
@@ -45,7 +44,6 @@ public class KeyHandler {
             fPressed = false;
         }
 
-        // NoFall toggle (K key)
         if (noFallKey != null && noFallKey.isDown()) {
             if (!nPressed) {
                 nPressed = true;
