@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyHandler {
@@ -15,18 +16,22 @@ public class KeyHandler {
     private boolean nPressed = false;
 
     public void registerKeys() {
+        KeyMapping.Category cat = new KeyMapping.Category(
+            ResourceLocation.fromNamespaceAndPath("flightmod", "main")
+        );
+
         flightKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.flightmod.flight",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_J,
-                "category.flightmod"
+                cat
         ));
 
         noFallKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.flightmod.nofall",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_K,
-                "category.flightmod"
+                cat
         ));
     }
 
@@ -35,7 +40,6 @@ public class KeyHandler {
             return;
         }
 
-        // Flight toggle (J key)
         if (flightKey != null && flightKey.isDown()) {
             if (!fPressed) {
                 fPressed = true;
@@ -45,7 +49,6 @@ public class KeyHandler {
             fPressed = false;
         }
 
-        // NoFall toggle (K key)
         if (noFallKey != null && noFallKey.isDown()) {
             if (!nPressed) {
                 nPressed = true;
