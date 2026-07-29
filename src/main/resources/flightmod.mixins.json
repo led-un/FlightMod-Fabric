@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.flightmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "NoFallMixin",
+    "ServerboundMovePlayerPacketAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
