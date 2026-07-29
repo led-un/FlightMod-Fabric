@@ -1,8 +1,8 @@
-# FlightMod (Fabric 1.20.1) - 轻量级飞行+防摔模组
+# FlightMod (Fabric 1.21.2) - 轻量级飞行+防摔模组
 
-Minecraft Fabric 1.20.1 辅助模组。
+Minecraft Fabric 1.21.2 辅助模组，提供飞行和防摔功能。
 
-> 需要 Fabric 1.21.1？切换到 [1.21.1 分支](https://github.com/led-un/FlightMod-Fabric/tree/1.21.1)
+> 其他 MC 版本分支： [1.20.1](https://github.com/led-un/FlightMod-Fabric/tree/1.20.1) | [1.21](https://github.com/led-un/FlightMod-Fabric/tree/1.21) | [1.21.1](https://github.com/led-un/FlightMod-Fabric/tree/1.21.1) | [1.21.3](https://github.com/led-un/FlightMod-Fabric/tree/1.21.3) | [1.21.4](https://github.com/led-un/FlightMod-Fabric/tree/1.21.4) | [1.21.5](https://github.com/led-un/FlightMod-Fabric/tree/1.21.5) | [1.21.8](https://github.com/led-un/FlightMod-Fabric/tree/1.21.8) | [1.21.10](https://github.com/led-un/FlightMod-Fabric/tree/1.21.10) | [1.21.11](https://github.com/led-un/FlightMod-Fabric/tree/1.21.11)
 
 > 其他加载器版本： [Forge 1.20.1](https://github.com/led-un/FlightMod-Forge) | [NeoForge 1.21.1](https://github.com/led-un/FlightMod-NeoForge)
 
@@ -22,52 +22,34 @@ Minecraft Fabric 1.20.1 辅助模组。
 
 ## 安装
 
-1. 安装 [Fabric Loader](https://fabricmc.net/) >= 0.14.21
-2. 安装 [Fabric API](https://modrinth.com/mod/fabric-api) >= 0.88.1
-3. 从 [Releases](https://github.com/led-un/FlightMod-Fabric/releases) 下载 `flightMod-fabric-1.20.1.jar`，放入 `.minecraft/mods/` 目录
+1. 安装 [Fabric Loader](https://fabricmc.net/) >= 0.15.11
+2. 安装 [Fabric API](https://modrinth.com/mod/fabric-api) >= 0.106.1
+3. 从 [Releases](https://github.com/led-un/FlightMod-Fabric/releases) 下载 `flightmod-fabric-1.21.2.jar`，放入 `.minecraft/mods/` 目录
 
 ## 下载
 
-| MC 版本 | 分支 | 下载 |
-|---------|------|------|
-| **1.20.1** | `main`（当前） | [flightMod-fabric-1.20.1.jar](https://github.com/led-un/FlightMod-Fabric/releases/tag/1.20.1) |
-| 1.21.1 | `1.21.1` | [flightMod-fabric-1.21.1.jar](https://github.com/led-un/FlightMod-Fabric/releases/tag/1.21.1) |
-
-## 与 1.21.1 版本的源码差异
-
-| 差异项 | 1.20.1 (`main`) | 1.21.1 (`1.21.1`) |
-|--------|-----------------|---------------------|
-| NoFallMixin 目标 | `ClientPacketListener.send(Packet)` | `Connection.send(Packet, PacketSendListener, boolean)` |
-| Loom 版本 | `1.3.+` | `1.10.+` |
-| Java 要求 | JDK 17 | JDK 21 |
-| Fabric Loader | >= 0.14.21 | >= 0.16.10 |
-| Fabric API | >= 0.88.1 | >= 0.108.0 |
-| Gson workaround | 不需要 | `settings.gradle` 中强制 Gson 2.10.1 |
-
-> 业务逻辑代码（`Flight.java`、`NoFall.java`、`KeyHandler.java`、`FlightMod.java`）两个版本完全一致。
+| MC 版本 | 下载 |
+|---------|------|
+| 1.20.1 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.20.1) |
+| 1.21 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21) |
+| 1.21.1 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.1) |
+| 1.21.2 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.2) |
+| 1.21.3 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.3) |
+| 1.21.4 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.4) |
+| 1.21.5 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.5) |
+| 1.21.8 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.8) |
+| 1.21.10 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.10) |
+| 1.21.11 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.11) |
 
 ## 构建
 
 ```bash
+git clone https://github.com/led-un/FlightMod-Fabric.git -b 1.21.2
+cd FlightMod-Fabric
 ./gradlew build
-# 产物在 build/libs/
 ```
 
-要求：**JDK 17+**
-
-## 项目结构
-
-```
-src/main/java/com/github/flightmod/
-├── FlightMod.java                              # 主入口（ClientModInitializer）
-├── KeyHandler.java                             # 按键处理（J=飞行, K=防摔）
-├── mixin/
-│   ├── NoFallMixin.java                        # Mixin: 拦截 ClientPacketListener.send()
-│   └── ServerboundMovePlayerPacketAccessor.java # Accessor: onGround 字段
-└── modules/
-    ├── Flight.java                             # 飞行模块
-    └── NoFall.java                             # 防摔模块
-```
+构建输出在 `build/libs/` 目录下。
 
 ## 开源协议
 
