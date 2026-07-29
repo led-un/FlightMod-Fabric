@@ -35,7 +35,6 @@ public class KeyHandler {
             return;
         }
 
-        // Flight toggle (J key)
         if (flightKey != null && flightKey.isDown()) {
             if (!fPressed) {
                 fPressed = true;
@@ -45,7 +44,6 @@ public class KeyHandler {
             fPressed = false;
         }
 
-        // NoFall toggle (K key)
         if (noFallKey != null && noFallKey.isDown()) {
             if (!nPressed) {
                 nPressed = true;
