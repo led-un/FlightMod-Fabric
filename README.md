@@ -74,4 +74,4 @@ src/main/java/com/github/flightmod/
 
 ## 开源协议
 
-MIT License
+[MIT License](https://opensource.org/licenses/MIT)
