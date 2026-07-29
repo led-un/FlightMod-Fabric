@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPacketListener.class)
 public class NoFallMixin {
 
-    @Inject(method = "send", at = @At("HEAD"))
+    @Inject(method = "send(Lnet/minecraft/network/protocol/Packet;)V", at = @At("HEAD"))
     private void onSendPacket(Packet<?> packet, CallbackInfo ci) {
         if (!(packet instanceof ServerboundMovePlayerPacket)) {
             return;
@@ -36,14 +36,14 @@ public class NoFallMixin {
         if (noFall.getMode() != NoFall.Mode.PACKET) {
             return;
         }
-        if (mc.player.getDeltaMovement().y > -0.5) {
+        if (mc.player.getDeltaMovement().y > 0.0) {
             return;
         }
         if (mc.player.onGround()) {
             return;
         }
 
-        // Use Accessor Mixin to set onGround — no reflection needed
+        // Use Accessor Mixin to set onGround
         ((ServerboundMovePlayerPacketAccessor) packet).setOnGround(true);
     }
 }
