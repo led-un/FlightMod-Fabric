@@ -18,7 +18,7 @@
 ## 构建
 
 ```bash
-git clone https://github.com/led-un/FlightMod-Fabric.git -b 1.21
+git clone https://github.com/led-un/FlightMod-Fabric.git -b 1.21.11
 cd FlightMod-Fabric
 ./gradlew build
 ```
