@@ -47,7 +47,7 @@ public class NoFall {
         if (player.getAbilities().instabuild) {
             return false;
         }
-        return player.getDeltaMovement().y < -0.5;
+        return player.getDeltaMovement().y < 0.0;
     }
 
     public boolean isEnabled() {

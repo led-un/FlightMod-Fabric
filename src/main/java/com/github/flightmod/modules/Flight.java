@@ -12,9 +12,6 @@ public class Flight {
     private final Minecraft mc = Minecraft.getInstance();
     private boolean enabled = false;
     private float speed = 0.1f;
-    private int tickCounter = 0;
-    private boolean flip = false;
-    private float lastYaw = 0.0f;
 
     private static Field flyingSpeedField = null;
 
@@ -79,19 +76,6 @@ public class Flight {
             return;
         }
         LocalPlayer player = this.mc.player;
-
-        ++this.tickCounter;
-        if (this.tickCounter >= 20) {
-            this.tickCounter = 0;
-            if (player.fallDistance >= 3.0f) {
-                float currentYaw = player.getYRot();
-                if (currentYaw == this.lastYaw) {
-                    player.setYRot(currentYaw + (float) (this.flip ? 1 : -1));
-                    this.flip = !this.flip;
-                }
-                this.lastYaw = player.getYRot();
-            }
-        }
 
         if (!player.isCreative()) {
             player.getAbilities().mayfly = true;
