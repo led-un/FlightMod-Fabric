@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "com/github/flightmod/mixin/NoFallMixin": {
+      "send(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;Z)V": "Lnet/minecraft/class_2535;method_52906(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;Z)V"
+    },
+    "com/github/flightmod/mixin/ServerboundMovePlayerPacketAccessor": {
+      "onGround": "field_29179:Z"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "com/github/flightmod/mixin/NoFallMixin": {
+        "send(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;Z)V": "Lnet/minecraft/class_2535;method_52906(Lnet/minecraft/class_2596;Lnet/minecraft/class_7648;Z)V"
+      },
+      "com/github/flightmod/mixin/ServerboundMovePlayerPacketAccessor": {
+        "onGround": "field_29179:Z"
+      }
+    }
+  }
+}
