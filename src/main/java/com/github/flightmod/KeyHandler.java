@@ -19,14 +19,14 @@ public class KeyHandler {
                 "key.flightmod.flight",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_J,
-                "category.flightmod"
+                KeyMapping.Category.MISC
         ));
 
         noFallKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.flightmod.nofall",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_K,
-                "category.flightmod"
+                KeyMapping.Category.MISC
         ));
     }
 
