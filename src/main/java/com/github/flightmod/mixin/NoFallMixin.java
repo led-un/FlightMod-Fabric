@@ -33,9 +33,6 @@ public class NoFallMixin {
         if (noFall == null || !noFall.isEnabled()) {
             return;
         }
-        if (noFall.getMode() != NoFall.Mode.PACKET) {
-            return;
-        }
         if (mc.player.getDeltaMovement().y > 0.0) {
             return;
         }
