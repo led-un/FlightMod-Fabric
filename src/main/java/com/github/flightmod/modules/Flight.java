@@ -52,7 +52,7 @@ public class Flight {
     }
 
     private void onActivate(class_746 player) {
-        if (!player.method_68878()) {
+        if (!player.method_7337()) {
             class_1656 abilities = player.method_31549();
             abilities.field_7478 = true;
             if (!abilities.field_7477) {
@@ -64,7 +64,7 @@ public class Flight {
     }
 
     private void onDeactivate(class_746 player) {
-        if (!player.method_68878()) {
+        if (!player.method_7337()) {
             class_1656 abilities = player.method_31549();
             abilities.field_7478 = false;
             Flight.setFlySpeed(abilities, 0.05f);
@@ -80,7 +80,7 @@ public class Flight {
             return;
         }
         class_746 player = this.mc.field_1724;
-        if (!player.method_68878()) {
+        if (!player.method_7337()) {
             player.method_31549().field_7478 = true;
             Flight.setFlySpeed(player.method_31549(), this.speed);
         }
