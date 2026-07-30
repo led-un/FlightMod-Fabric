@@ -1,0 +1,14 @@
+{
+  "projectPath": ":",
+  "classpaths": {
+    "test": [
+      "/workspace/fabric-repo/build/classes/java/test",
+      "/workspace/fabric-repo/build/resources/test"
+    ],
+    "main": [
+      "/workspace/fabric-repo/build/classes/java/main",
+      "/workspace/fabric-repo/build/resources/main",
+      "/workspace/fabric-repo/build/devlibs/fabric-repo-1.0.0-dev.jar"
+    ]
+  }
+}
