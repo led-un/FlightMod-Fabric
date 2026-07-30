@@ -1,0 +1,46 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.fabricmc.api.ClientModInitializer
+ *  net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
+ *  org.slf4j.Logger
+ *  org.slf4j.LoggerFactory
+ */
+package com.github.flightmod;
+
+import com.github.flightmod.KeyHandler;
+import com.github.flightmod.modules.Flight;
+import com.github.flightmod.modules.NoFall;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class FlightMod
+implements ClientModInitializer {
+    public static final String MOD_ID = "flightmod";
+    public static final Logger LOGGER = LoggerFactory.getLogger((String)"flightmod");
+    private static Flight flight;
+    private static NoFall noFall;
+    private static KeyHandler keyHandler;
+
+    public void onInitializeClient() {
+        flight = new Flight();
+        noFall = new NoFall();
+        keyHandler = new KeyHandler();
+        ClientTickEvents.END_CLIENT_TICK.register(flight::onClientTick);
+        ClientTickEvents.END_CLIENT_TICK.register(noFall::onClientTick);
+        ClientTickEvents.END_CLIENT_TICK.register(keyHandler::onClientTick);
+        keyHandler.registerKeys();
+        LOGGER.info("FlightMod loaded! J=Flight, K=NoFall");
+    }
+
+    public static Flight getFlight() {
+        return flight;
+    }
+
+    public static NoFall getNoFall() {
+        return noFall;
+    }
+}

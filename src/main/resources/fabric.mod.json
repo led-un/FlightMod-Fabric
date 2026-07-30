@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "flightmod",
+  "version": "1.0.0",
+  "name": "FlightMod",
+  "description": "轻量级飞行+防摔落模组
+J键开关飞行 | K键开关防摔",
+  "authors": [
+    "You"
+  ],
+  "contact": {
+    "homepage": "https://github.com/flightmod",
+    "sources": "https://github.com/flightmod"
+  },
+  "license": "MIT",
+  "icon": "assets/flightmod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.github.flightmod.FlightMod"
+    ]
+  },
+  "mixins": [
+    "flightmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21.7",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
