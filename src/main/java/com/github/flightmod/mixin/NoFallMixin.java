@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
+ *  net.minecraft.class_2535
  *  net.minecraft.class_2596
  *  net.minecraft.class_2828
  *  net.minecraft.class_310
- *  net.minecraft.class_634
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -16,18 +16,18 @@ package com.github.flightmod.mixin;
 import com.github.flightmod.FlightMod;
 import com.github.flightmod.mixin.ServerboundMovePlayerPacketAccessor;
 import com.github.flightmod.modules.NoFall;
+import net.minecraft.class_2535;
 import net.minecraft.class_2596;
 import net.minecraft.class_2828;
 import net.minecraft.class_310;
-import net.minecraft.class_634;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value={class_634.class})
+@Mixin(value={class_2535.class})
 public class NoFallMixin {
-    @Inject(method={"send"}, at={@At(value="HEAD")})
+    @Inject(method={"method_10743(Lnet/minecraft/class_2596;)V"}, at={@At(value="HEAD")})
     private void onSendPacket(class_2596<?> packet, CallbackInfo ci) {
         if (!(packet instanceof class_2828)) {
             return;
