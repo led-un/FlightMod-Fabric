@@ -22,7 +22,8 @@ Minecraft Fabric 辅助模组。
 ## 安装
 
 1. 安装 [Fabric](https://fabricmc.net/) 对应 MC 版本
-2. 从 [Releases](https://github.com/led-un/FlightMod-Fabric/releases) 下载对应版本的 JAR，放入 `.minecraft/mods/` 目录
+2. 安装 [Fabric API](https://modrinth.com/mod/fabric-api)（部分版本需要）
+3. 从 [Releases](https://github.com/led-un/FlightMod-Fabric/releases) 下载对应版本的 JAR，放入 `.minecraft/mods/` 目录
 
 ## 下载
 
@@ -35,7 +36,10 @@ Minecraft Fabric 辅助模组。
 | 1.21.3 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.3) |
 | 1.21.4 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.4) |
 | 1.21.5 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.5) |
+| 1.21.6 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.6) |
+| 1.21.7 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.7) |
 | 1.21.8 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.8) |
+| 1.21.9 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.9) |
 | 1.21.10 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.10) |
 | 1.21.11 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v1.21.11) |
 | 26.1 | [Releases](https://github.com/led-un/FlightMod-Fabric/releases/tag/v26.1) |
